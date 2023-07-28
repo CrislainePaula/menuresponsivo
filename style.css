@@ -1,0 +1,96 @@
+body, ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+.linknav{
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.linknav:hover{
+    background-color: #dddddd;
+    border-radius: 10px;
+}
+
+#logo{
+    max-width:100px;
+    max-height:50px;
+    width: auto;
+    height: auto;
+}
+
+
+#cabecalho{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+    padding: 3rem;
+    background: #ececec;
+}
+
+#menu{
+    display: flex;
+    list-style: none;
+    gap: .4rem;
+}
+
+#menu a{
+    display: block;
+    padding: .5rem;
+    font-weight: 500;
+}
+
+
+
+#botao-mobile{
+    display: none;
+}
+
+
+
+
+@media (max-width: 600px){
+    #botao-mobile{
+        display: block;
+    }
+
+    #menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        right: 0px;
+        background: #ececec;
+        top: 95px;
+        height: 0px;
+        z-index: 1000;
+        transition: 0.6s;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    #menu a {
+        padding: 2rem;
+        text-align: center;
+
+    }
+
+    #nav.active #menu{
+        height: calc(100vh - 95px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #botao-mobile img{
+        max-width:60px;
+        max-height:30px;
+        width: auto;
+        height: auto;
+    }
+    #botao-mobile{
+        cursor: pointer;
+    }
+}
